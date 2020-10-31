@@ -1,23 +1,33 @@
 #include <stdio.h>
 
-int get_power(int number, int power)
+int is_simple (int number);
+int main()
 {
-  int result = 1;
-  for(int i = 0; i < power; i++)
-  {
-    result *=  number;
-  }
+  long int number;
   
-  return result;
+  scanf ("%li", & number);
+  printf ("%d", is_simple (number));
+
+  return 0;
 }
 
-int main(void) 
+int is_simple (int number)
 {
-  int number;
-  int power;
-  printf("enter_a_number: ");
-  scanf("%d", &number);
-  printf("enter_the_degree: ");
-  scanf("%d", &power);
-  printf("%d", get_power(number, power));
+  if (number > 1)
+  {
+    for (int i = 2; i < number; i++)
+    {
+      if (number % i == 0)
+      {
+        return 0;
+      }
+    }
+    return 1;
+  }
+  else
+  {
+    printf ("the number you entered must be natural \n");
+  }
+
+  return 0;
 }
