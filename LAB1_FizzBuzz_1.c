@@ -1,26 +1,29 @@
 #include <stdio.h>
 
-int main()
-{ 
-  for (int i = 1; i <= 100; i++)
+int main ()
+{
+  for (int i = 1; i <=100; i++)
   {
-    if ((i % 3 == 0) && (i % 5 != 0))
+    if (i % 3 == 0 && i % 5 == 0)
     {
-      printf("Fizz\n");
+      printf ("FizzBuzz \n");
     }
-    if ((i % 3 != 0) && (i % 5 == 0))
+
+    else if (i % 3 == 0)
     {
-      printf("Buzz\n");
+      printf ("Fizz \n");
     }
-    if ((i % 3 == 0) && (i % 5 == 0))
+
+    else if (i % 5 == 0)
     {
-      printf("FizzBuzz\n");
+      printf ("Buzz \n");
     }
-    if ((i % 3 != 0) && (i % 5 != 0))
+
+    else
     {
-      printf("%d\n", i);
+      printf ("%d \n", i);
     }
   }
-  
+
   return 0;
 }
