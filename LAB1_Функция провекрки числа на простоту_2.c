@@ -1,36 +1,25 @@
 #include <stdio.h>
+#include <conio.h>
+#include <math.h>
 
-int is_simple(int number);
-
-int main()
+int get_power(int number, int power)
 {
-  int inp_num;
-  scanf ("%d", &inp_num );
-  printf("%d", is_simple(inp_num) );
-  getchar(); 
-  getchar();
-
-  return 0;
-}
-
-int is_simple(int number) 
-{
-  if (number > 1)
+  int result = 1;
+  for(int i = 0; i < power; i++)
   {
-    for(int i = 2; i < number; i++)
-    {
-      if (number % i == 0)
-      {
-        return 0;
-      }
-      
-      return 1;
-    }
-  }
-  else
-  {
-    printf("the number you entered is neither composite nor simple. \n");
+    result *=  number;
   }
   
-  return 0;
+  return result;
+}
+
+int main(void) 
+{
+  int number;
+  int power;
+  printf("enter_a_number: ");
+  scanf("%d", &number);
+  printf("enter_the_degree: ");
+  scanf("%d", &power);
+  printf("%d", get_power(number, power));
 }
