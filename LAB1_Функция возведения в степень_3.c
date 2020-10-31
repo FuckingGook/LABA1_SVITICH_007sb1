@@ -1,31 +1,26 @@
 #include <stdio.h>
 
-int is_simple(long int number) 
+int get_power (int number, int power);
+int main (void) 
 {
-  if (number > 1)
-  {
-    for(int i = 2; i < number; i++)
-    {
-      if (number % i == 0)
-      {
-        return 0;
-      }
-      
-      return 1;
-    }
-  }
-  else
-  {
-    printf("the_number_you_entered_is_neither_composite_nor_simple. \n");
-  }
-  
-  return 0;
+  int number;
+  int power;
+
+  scanf ("%d", & number);
+  printf ("enter the degree: ");
+
+  scanf ("%d", & power);
+  printf ("%d", get_power (number, power));
 }
 
-int main(void)
+int get_power (int number, int power)
 {
-  long int number;
-  printf("enter_the_number: ");
-  scanf("%li", &number);
-  printf("%d", is_simple(number));
+  int result = 1;
+  
+  for (int i = 0; i < power; i++)
+  {
+    result *=  number;
+  } 
+  
+  return result;
 }
