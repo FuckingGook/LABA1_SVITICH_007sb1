@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
-#include <math.h>
 
 int get_power(int number, int power)
 {
